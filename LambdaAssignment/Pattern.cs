@@ -67,5 +67,19 @@ namespace LambdaAssignment
                 return mobileNumber;
             }
         };
+        public static Func<string, string> CheckPassword = (password) =>
+        {
+            string pattern = "^[a-zA-Z0-9@$!%*#?&]{1,}[a-zA-Z0-9@$!%*#?&]{7,}$";
+            if (Regex.IsMatch(password, pattern))
+            {
+                Console.WriteLine("Entered password is valid");
+                return password;
+            }
+            else
+            {
+                Console.WriteLine("Entered password not valid. Try again!!");
+                return password;
+            }
+        };
     }
 }
