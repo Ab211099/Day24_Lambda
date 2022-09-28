@@ -2,10 +2,10 @@
 {
     internal class Program
     {
-        public static string firstname,lastname,email;
+        public static string firstname,lastname,email,mobileNumber1;
         static void Main(string[] args)
         {
-            Console.WriteLine("Choose an option:\n 1.First Name \n 2.Last name \n 3.Enter email");
+            Console.WriteLine("Choose an option:\n 1.First Name \n 2.Last name \n 3.Enter email \n 4.Enter the number");
             int result = Convert.ToInt32(Console.ReadLine());
 
             switch (result)
@@ -25,7 +25,12 @@
                     email = Console.ReadLine();
                     Pattern.CheckEmail(email);
                     break;
-                    
+                case 4:
+                    Console.WriteLine("Enter the phone number");
+                    mobileNumber1 = Console.ReadLine();
+                    Pattern.CheckMobileNumber(mobileNumber1);
+                    break;
+
 
             }
         }

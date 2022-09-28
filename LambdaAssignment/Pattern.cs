@@ -53,5 +53,19 @@ namespace LambdaAssignment
             }
             return email;
         };
+        public static Func<string, string> CheckMobileNumber = (mobileNumber) =>
+        {
+            string pattern = "^91[ ][1-9][0-9]{9}$";
+            if (Regex.IsMatch(mobileNumber, pattern))
+            {
+                Console.WriteLine("Mobile number is valid");               
+                return mobileNumber;
+            }
+            else
+            {
+                Console.WriteLine("Entered mobile number is not valid");
+                return mobileNumber;
+            }
+        };
     }
 }
