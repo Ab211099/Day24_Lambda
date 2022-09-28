@@ -37,5 +37,21 @@ namespace LambdaAssignment
             }
             return lastName;
         };
+        public static Func<string, string> CheckEmail = (email) =>
+        {
+            string pattern = "^[0-9a-zA-Z]+([+#%&_.][a-zA-Z0-9]+)*[@][a-zA-Z]{2,}[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$";
+            if (Regex.IsMatch(email, pattern))
+            {
+                Console.WriteLine("entered email is valid");
+                
+                return email;
+            }
+            else
+            {
+                Console.WriteLine("Entered email is not valid");
+                
+            }
+            return email;
+        };
     }
 }
