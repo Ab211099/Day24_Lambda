@@ -23,5 +23,19 @@ namespace LambdaAssignment
             }
             return firstName;
         };
+        public static Func<string, string> CheckLastName = (lastName) =>
+        {
+            string pattern = "^[A-Z][a-z]{3,}$";
+            if (Regex.IsMatch(lastName, pattern))
+            {
+                Console.WriteLine("entered name is valid");
+                return lastName;
+            }
+            else
+            {
+                Console.WriteLine("Entered name is Invalid\n Please enter first character of your lastname in capital and minimum 3 characters name");
+            }
+            return lastName;
+        };
     }
 }
